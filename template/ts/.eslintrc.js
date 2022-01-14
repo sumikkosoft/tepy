@@ -1,12 +1,9 @@
 const config = {
   env: {
-    browser: true,
     node: true,
   },
   extends: [
     "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:react-hooks/recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:import/typescript",
     "prettier",
@@ -15,17 +12,9 @@ const config = {
   parserOptions: {
     warnOnUnsupportedTypeScriptVersion: false,
     sourceType: "module",
-    ecmaFeatures: { jsx: true },
   },
-  plugins: ["react", "@typescript-eslint"],
+  plugins: ["@typescript-eslint"],
   rules: {
-    "react/jsx-filename-extension": [2, { extensions: [".js", ".tsx"] }],
-    "react/jsx-handler-names": 2,
-    "react/prop-types": "off",
-    "react/react-in-jsx-scope": "off",
-    "react/display-name": 0,
-    "arrow-body-style": 0,
-
     // allow special triple slashes comment: "/// <reference />"
     "spaced-comment": [2, "always", { line: { markers: ["/"] }, block: { balanced: true } }],
 
@@ -54,6 +43,11 @@ const config = {
     "@typescript-eslint/no-var-requires": 2,
     "@typescript-eslint/prefer-literal-enum-member": 2,
     "@typescript-eslint/prefer-namespace-keyword": 2,
+
+    "node/shebang": 0,
+    "import/no-useless-path-segments": 0,
+    "import/no-duplicates": 0,
+    "import/order": 0,
   },
   settings: {
     jsdoc: {
